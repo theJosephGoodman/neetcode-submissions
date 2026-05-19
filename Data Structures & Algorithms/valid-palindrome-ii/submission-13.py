@@ -1,0 +1,19 @@
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        l,r = 0, len(s)-1
+        
+        while l < r:
+            if s[l] != s[r]:
+                return self.val_pal(s[l:r]) or   self.val_pal(s[l+1:r+1])
+            l= l+1
+            r= r-1
+        return True
+    def val_pal(self, s):
+        l, r = 0, len(s)-1
+
+        while l<r:
+            if s[l] != s[r]:
+                return False
+            l = l+1
+            r = r-1
+        return True
